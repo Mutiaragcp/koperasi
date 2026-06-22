@@ -1,0 +1,221 @@
+/* ==========================================================================
+   MODERN FINTECH KOPERASI DESIGN SYSTEM
+   ========================================================================== */
+
+   :root {
+    /* Color Palette - Vibrant & Premium */
+    --color-primary: #4F46E5; /* Indigo */
+    --color-primary-hover: #4338CA;
+    --color-primary-light: #EEF2FF;
+    
+    --color-secondary: #0EA5E9; /* Sky Blue */
+    --color-secondary-light: #E0F2FE;
+    
+    --color-success: #10B981; /* Emerald */
+    --color-success-light: #D1FAE5;
+    
+    --color-warning: #F59E0B; /* Amber */
+    --color-warning-light: #FEF3C7;
+    
+    --color-danger: #EF4444; /* Red */
+    --color-danger-light: #FEE2E2;
+    
+    --color-dark: #1E293B; /* Slate 800 */
+    --color-muted: #64748B; /* Slate 500 */
+    --color-bg: #F8FAFC; /* Slate 50 */
+    
+    /* Surface / Glassmorphism */
+    --surface-bg: rgba(255, 255, 255, 0.85);
+    --surface-border: rgba(255, 255, 255, 0.6);
+    --surface-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+    --surface-shadow-hover: 0 20px 40px -10px rgba(79, 70, 229, 0.15);
+    
+    /* Typography */
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    /* Subtle ambient gradient in background */
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.08) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: var(--color-dark);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   COMPONENTS
+   ========================================================================== */
+
+/* Cards with Glassmorphism */
+.card-modern {
+    background: var(--surface-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--surface-border) !important;
+    border-radius: 20px;
+    box-shadow: var(--surface-shadow);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* Card gradients for specific stat cards */
+.card-gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+}
+.card-gradient-primary * {
+    color: white !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding: 0.6rem 1.2rem;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+}
+
+.btn-light {
+    background-color: white;
+    border-color: #E2E8F0;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+    background-color: #F8FAFC;
+    border-color: #CBD5E1;
+    transform: translateX(4px); /* Slight slide for list items */
+}
+
+/* Badges */
+.badge {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding: 0.4em 0.8em;
+}
+
+/* Utility Colors override for Bootstrap */
+.text-primary { color: var(--color-primary) !important; }
+.bg-primary-subtle { background-color: var(--color-primary-light) !important; }
+.border-primary-subtle { border-color: rgba(79, 70, 229, 0.2) !important; }
+
+.text-success { color: var(--color-success) !important; }
+.bg-success-subtle { background-color: var(--color-success-light) !important; }
+
+.text-warning { color: var(--color-warning) !important; }
+.bg-warning-subtle { background-color: var(--color-warning-light) !important; }
+
+.text-danger { color: var(--color-danger) !important; }
+.bg-danger-subtle { background-color: var(--color-danger-light) !important; }
+
+.text-dark { color: var(--color-dark) !important; }
+.text-muted-light { color: var(--color-muted) !important; }
+
+/* Dashboard Specific Layout */
+.main-wrapper {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    max-width: 1400px;
+}
+
+.content-header {
+    background-color: transparent !important;
+    border-bottom: none !important;
+    margin-top: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .main-wrapper {
+        padding-top: calc(64px + 1.5rem) !important;
+    }
+}
+
+/* Tables */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.table > :not(caption) > * > * {
+    background-color: transparent !important;
+    border-bottom-color: rgba(226, 232, 240, 0.6);
+    padding: 1rem 0.75rem;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: var(--surface-bg-hover);
+}
+
+/* Custom Scrollbar for tables to prevent Windows 11 layout shift on hover */
+.table-responsive::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+}
+.table-responsive::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 10px;
+}
+.table-responsive::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.table thead th {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-muted);
+    font-weight: 700;
+    border-bottom: 1px solid #E2E8F0 !important;
+}
+
+/* Icons styling */
+.icon-shape {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 12px;
+}
+
+/* Datatables Controls Alignment Fix */
+.dataTables_wrapper > .row:first-child {
+    padding: 1rem 1.5rem 0.5rem 1.5rem;
+    margin: 0;
+}
+.dataTables_wrapper > .row:last-child {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    margin: 0;
+}

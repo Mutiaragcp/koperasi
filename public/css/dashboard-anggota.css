@@ -1,0 +1,50 @@
+:root {
+    --kop-ink: #0F172A;
+    --kop-muted: #64748B;
+    --kop-dim: #94A3B8;
+    --kop-border: #E2E8F0;
+    --kop-surface: #F8FAFC;
+    --kop-primary: #4F46E5;
+    --kop-primary-soft: #EEF2FF;
+    --kop-success: #059669;
+    --kop-success-soft: #ECFDF5;
+    --kop-warning: #D97706;
+    --kop-warning-soft: #FFFBEB;
+    --kop-danger: #DC2626;
+    --kop-danger-soft: #FEF2F2;
+    --kop-radius: 14px;
+    --kop-shadow: 0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
+}
+.kop-card { background:#fff; border:1px solid var(--kop-border); border-radius:var(--kop-radius); box-shadow:var(--kop-shadow); }
+.kop-label { font-size:0.62rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--kop-dim); }
+.kop-amount { font-size:1.75rem; font-weight:700; letter-spacing:-0.03em; color:var(--kop-ink); line-height:1.1; }
+.kop-divider { height:1px; background:var(--kop-border); margin:1rem 0; }
+.kop-pill { display:inline-flex; align-items:center; gap:5px; padding:3px 10px; border-radius:20px; font-size:0.65rem; font-weight:700; }
+.kop-pill-success { background:var(--kop-success-soft); color:var(--kop-success); }
+.kop-pill-warning { background:var(--kop-warning-soft); color:var(--kop-warning); }
+.kop-stat-mini { display:flex; flex-direction:column; gap:2px; }
+.kop-stat-mini span:first-child { font-size:0.62rem; color:var(--kop-dim); font-weight:500; }
+.kop-stat-mini span:last-child  { font-size:0.78rem; color:var(--kop-ink); font-weight:600; }
+.kop-progress-track { height:5px; background:var(--kop-border); border-radius:99px; overflow:hidden; margin-top:6px; }
+.kop-progress-fill { height:100%; border-radius:99px; background:var(--kop-warning); transition:width 0.6s ease; }
+.kop-member-card { background:var(--kop-ink); border-radius:var(--kop-radius); color:#fff; padding:1.5rem; position:relative; overflow:hidden; }
+.kop-member-card::before { content:''; position:absolute; top:-40px; right:-40px; width:160px; height:160px; border-radius:50%; background:rgba(255,255,255,0.04); }
+.kop-member-card::after  { content:''; position:absolute; bottom:-60px; left:-20px; width:200px; height:200px; border-radius:50%; background:rgba(255,255,255,0.03); }
+.kop-avatar { width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:700; color:#fff; flex-shrink:0; }
+.kop-table th { font-size:0.62rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--kop-dim); border-bottom:1px solid var(--kop-border) !important; padding:0.75rem 1.25rem !important; background:var(--kop-surface); }
+.kop-table td { padding:0.9rem 1.25rem !important; border-bottom:1px solid var(--kop-border) !important; vertical-align:middle; font-size:0.84rem; color:var(--kop-ink); }
+.kop-table tbody tr:last-child td { border-bottom:none !important; }
+.kop-table tbody tr:hover td { background:var(--kop-surface); }
+.kop-trx-icon { width:30px; height:30px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:700; flex-shrink:0; }
+.kop-trx-icon.in  { background:var(--kop-success-soft); color:var(--kop-success); }
+.kop-trx-icon.out { background:var(--kop-danger-soft);  color:var(--kop-danger); }
+.kop-trx-amount-in  { font-weight:700; color:var(--kop-success); }
+.kop-trx-amount-out { font-weight:700; color:var(--kop-danger); }
+.kop-service-btn { display:flex; align-items:center; gap:14px; padding:1rem 1.1rem; border:1px solid var(--kop-border); border-radius:10px; background:#fff; text-decoration:none; transition:background 0.15s, border-color 0.15s, transform 0.1s; }
+.kop-service-btn:hover { background:var(--kop-surface); border-color:#C7D2FE; transform:translateY(-1px); }
+.kop-service-icon { width:38px; height:38px; border-radius:9px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.kop-service-icon.indigo { background:var(--kop-primary-soft); color:var(--kop-primary); }
+.kop-service-icon.amber  { background:var(--kop-warning-soft); color:var(--kop-warning); }
+.kop-service-title { font-size:0.85rem; font-weight:600; color:var(--kop-ink); }
+.kop-service-sub   { font-size:0.7rem; color:var(--kop-muted); margin-top:2px; }
+.kop-service-sub.danger { color:var(--kop-danger); font-weight:500; }
